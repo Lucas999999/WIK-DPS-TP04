@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rust-apis
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      type: api
+  template:
+    metadata:
+      labels:
+        type: api
+    spec:
+      containers:
+      - name: rust-api
+        image: registry.cluster.wik.cloud/public/echo
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rust-api
+spec:
+  containers:
+  - name: rust-api
+    image: registry.cluster.wik.cloud/public/echo
+    ports:
+    - containerPort: 8080
